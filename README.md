@@ -10,9 +10,11 @@ This is an unofficial template. Check your school's submission requirements
 before using it for a final thesis.
 
 ## Showcase
-<img width="2481" height="3508" alt="page-01" src="https://github.com/user-attachments/assets/4c6d7def-1082-4af8-a73d-6e8ad397f73f" />
 
-<img width="2481" height="3508" alt="page-010" src="https://github.com/user-attachments/assets/3f43330e-eb27-4ebf-9752-d147d01b9ac8" />
+<p align="center">
+<img alt="page-01" src="https://github.com/user-attachments/assets/4c6d7def-1082-4af8-a73d-6e8ad397f73f", width="45%" />
+<img alt="page-010" src="https://github.com/user-attachments/assets/3f43330e-eb27-4ebf-9752-d147d01b9ac8", width="45%" />
+</p>
 
 ## Requirements
 
@@ -23,10 +25,10 @@ before using it for a final thesis.
   `siunitx`, `physunits`, `derivative`, TikZ, and `tcolorbox`. A full TeX Live
   installation is a convenient starting point.
 - These fonts, available to LuaLaTeX by name:
-  - Carlito
-  - Iosevka
-  - Fira Math
-  - GFS Neohellenic Math
+    - Carlito
+    - Iosevka
+    - Fira Math
+    - GFS Neohellenic Math
 
 Fonts are not bundled. Install missing fonts or change the font selections
 in `conf.tex`. Save source files as UTF-8.
@@ -79,19 +81,19 @@ names, or school information.
 
 ## Files
 
-| File | Purpose |
-| --- | --- |
-| `main.tex` | Document assembly and declaration |
-| `meta.tex` | Thesis details and PDF metadata |
-| `conf.tex` | Packages, fonts, formatting, and bibliography setup |
-| `titlepage.tex` | Cover layout |
-| `abstract.tex` | Greek and English abstracts |
-| `introduction.tex`, `methodology.tex`, `results.tex`, `conclusion.tex` | Main thesis sections |
-| `abbreviations.tex`, `variables.tex`, `subscripts.tex` | Notation lists |
-| `appendix.tex` | Optional appendices |
-| `references.bib` | Bibliography database |
-| `logo/` | Cover emblem PDFs and asset notes |
-| `latexmkrc` | Build configuration |
+| File                                                                   | Purpose                                             |
+| ---------------------------------------------------------------------- | --------------------------------------------------- |
+| `main.tex`                                                             | Document assembly and declaration                   |
+| `meta.tex`                                                             | Thesis details and PDF metadata                     |
+| `conf.tex`                                                             | Packages, fonts, formatting, and bibliography setup |
+| `titlepage.tex`                                                        | Cover layout                                        |
+| `abstract.tex`                                                         | Greek and English abstracts                         |
+| `introduction.tex`, `methodology.tex`, `results.tex`, `conclusion.tex` | Main thesis sections                                |
+| `abbreviations.tex`, `variables.tex`, `subscripts.tex`                 | Notation lists                                      |
+| `appendix.tex`                                                         | Optional appendices                                 |
+| `references.bib`                                                       | Bibliography database                               |
+| `logo/`                                                                | Cover emblem PDFs and asset notes                   |
+| `latexmkrc`                                                            | Build configuration                                 |
 
 ## Publishing and license
 
