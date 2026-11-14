@@ -9,6 +9,11 @@ bibliography.
 This is an unofficial template. Check your school's submission requirements
 before using it for a final thesis.
 
+## Showcase
+<img width="2481" height="3508" alt="page-01" src="https://github.com/user-attachments/assets/4c6d7def-1082-4af8-a73d-6e8ad397f73f" />
+
+<img width="2481" height="3508" alt="page-010" src="https://github.com/user-attachments/assets/3f43330e-eb27-4ebf-9752-d147d01b9ac8" />
+
 ## Requirements
 
 - A TeX distribution with LuaLaTeX, such as TeX Live or MiKTeX.
