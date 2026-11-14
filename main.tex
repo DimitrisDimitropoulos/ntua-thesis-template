@@ -1,0 +1,81 @@
+\input{meta.tex}
+\input{conf.tex}
+
+% Plagiarism box
+\newtcolorbox{plagiarismbox}{
+	colback=white,
+	colframe=secblue,
+	arc=0mm,
+	boxrule=0.8pt,
+	left=12pt,
+	right=12pt,
+	top=12pt,
+	bottom=12pt
+}
+
+\begin{document}
+
+% The titlepage environment resets the page counter; omit its PDF page anchor.
+\hypersetup{pageanchor=false}
+\input{titlepage.tex}
+\hypersetup{pageanchor=true}
+
+\newpage
+\textit{Υπεύθυνη δήλωση για λογοκλοπή και για κλοπή πνευματικής ιδιοκτησίας:}
+\vspace{1em}
+
+\begin{plagiarismbox}
+	\begin{center}
+		\bfseries\large ΥΠΕΥΘΥΝΗ ΔΗΛΩΣΗ
+	\end{center}
+	\vspace{0.5em}
+
+	\itshape
+	Έχω διαβάσει και κατανοήσει τους κανόνες για τη λογοκλοπή και τον τρόπο σωστής αναφοράς των πηγών που περιέχονται στον Οδηγό συγγραφής Διπλωματικών Εργασιών. Δηλώνω ότι, από όσα γνωρίζω, το περιεχόμενο της παρούσας εργασίας είναι προϊόν δικής μου δουλειάς και υπάρχουν αναφορές σε όλες τις πηγές που χρησιμοποίησα.
+	\medskip
+
+	Οι απόψεις και τα συμπεράσματα που περιέχονται σε αυτή τη Διπλωματική εργασία είναι του συγγραφέα και δεν πρέπει να ερμηνευθεί ότι αντιπροσωπεύουν τις επίσημες θέσεις της Σχολής Μηχανολόγων Μηχανικών ή του Εθνικού Μετσόβιου Πολυτεχνείου.
+
+	\vspace{2.5em}
+	\normalfont
+	\begin{flushright}
+		\begin{tabular}{c}
+			Ο Δηλών \\[1em]
+			\textbf{\ThesisAuthor}
+		\end{tabular}
+	\end{flushright}
+\end{plagiarismbox}
+
+\newpage
+\input{abstract.tex}
+
+\newpage
+\tableofcontents
+\clearpage
+\input{abbreviations.tex}
+\clearpage
+\input{variables.tex}
+\clearpage
+\input{subscripts.tex}
+\clearpage
+\setcounter{table}{0}
+\input{introduction.tex}
+\clearpage
+\input{methodology.tex}
+\clearpage
+\input{results.tex}
+\clearpage
+\input{conclusion.tex}
+\clearpage
+% \input{appendix.tex}
+% \clearpage
+\printbibliography
+
+\clearpage
+\listoffigures
+\addcontentsline{toc}{section}{\listfigurename}
+\clearpage
+\listoftables
+\addcontentsline{toc}{section}{\listtablename}
+
+\end{document}

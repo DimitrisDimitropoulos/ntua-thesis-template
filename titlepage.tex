@@ -1,0 +1,86 @@
+\begin{titlepage}
+	\thispagestyle{empty}
+	% Titlepage colors
+	\definecolor{coverblue}{RGB}{0, 82, 122}
+	\definecolor{coverorange}{RGB}{225, 106, 30}
+	\definecolor{boxblue}{RGB}{235, 243, 250}
+	\definecolor{bordergray}{RGB}{180, 190, 200}
+	\definecolor{metabrown}{RGB}{110, 40, 15}
+	\noindent
+	\begin{tikzpicture}[remember picture, overlay]
+
+		\fill[coverblue]
+		(current page.north west) rectangle ++(6cm, -\paperheight);
+
+		\node[anchor=south, inner sep=0pt] at ([xshift=3cm, yshift=2.5cm]current page.south west) {
+			\includegraphics[width=4.5cm]{./logo/pyro-white.pdf}
+		};
+
+		\node[
+			anchor=south west,
+			rotate=90,
+			text=white,
+			font=\fontsize{28pt}{30pt}\bfseries
+		] at ([xshift=4.8cm, yshift=8.5cm]current page.south west) {
+			\ThesisSchool
+		};
+
+		\fill[coverorange]
+		([xshift=1.2cm, yshift=-2.8cm]current page.north west) rectangle
+		([xshift=-1.2cm, yshift=-4.8cm]current page.north east);
+
+		\draw[white, line width=1pt]
+		([xshift=1.5cm, yshift=-3.05cm]current page.north west) rectangle
+		([xshift=-1.5cm, yshift=-4.55cm]current page.north east);
+
+		\node[
+			anchor=east,
+			text=white,
+			font=\fontsize{18pt}{22pt}\bfseries
+		] at ([xshift=-2cm, yshift=-3.8cm]current page.north east) {
+			\ThesisAuthorUppercase
+		};
+
+		\node[
+			anchor=north west,
+			fill=boxblue,
+			draw=bordergray,
+			line width=0.8pt,
+			inner sep=18pt,
+			text width=10.5cm,
+			minimum height=4.5cm,
+			align=left
+		] at ([xshift=7.2cm, yshift=-9.5cm]current page.north west) {
+			{\fontsize{22pt}{26pt}\selectfont\textbf{\ThesisTitle}\par}
+			% \vspace{0.8em}
+			% {\fontsize{13pt}{16pt}\selectfont\color{gray!80!black} Υπότιτλος}
+		};
+
+		\node[
+		anchor=north west,
+		draw=bordergray,
+		line width=0.6pt,
+		fill=white,
+		inner sep=10pt,
+		text width=13.5cm,
+		align=left
+		] at ([xshift=6.2cm, yshift=-20cm]current page.north west) {
+		{\color{metabrown}\textbf{\ThesisSector}}\\[0.4em]
+		{\color{metabrown}\textbf{Επιβλέπων: \ThesisSupervisor}, \ThesisSupervisorRank}
+		};
+
+		\node[
+			anchor=north east,
+			draw=bordergray,
+			line width=0.6pt,
+			fill=white,
+			inner sep=7pt,
+			text=coverblue,
+			font=\bfseries\large
+		] at ([xshift=-1.2cm, yshift=-23.5cm]current page.north east) {
+			\ThesisLocation\ \ThesisYear
+		};
+
+	\end{tikzpicture}
+	\null
+\end{titlepage}

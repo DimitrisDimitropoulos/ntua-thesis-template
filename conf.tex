@@ -1,0 +1,177 @@
+\documentclass[a4paper]{article}
+\usepackage[fontsize=12pt]{fontsize}
+
+% Fonts and languages, mainly for Linux users
+\usepackage{polyglossia}
+\setdefaultlanguage{greek} \setotherlanguage{english}
+\setmainfont{Carlito} \setmonofont{Iosevka}
+\usepackage{siunitx,physunits}
+\usepackage{derivative}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\setmathfont{Fira Math}
+\setmathfont[range={\top, \bot, \succeq}]{GFS Neohellenic Math}
+\usepackage{graphicx, caption}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usetikzlibrary{calc,positioning}
+
+% Tables and algorithms
+\usepackage{array, booktabs, multirow, tabularx, longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\floatname{algorithm}{Αλγόριθμος}
+% \algrenewcommand\algorithmicrequire{\textbf{Δεδομένα}}
+% \algrenewcommand\algorithmicensure{\textbf{Αποτέλεσμα}}
+% \algrenewcommand\algorithmicfor{\textbf{για}}
+% \algrenewcommand\algorithmicdo{\textbf{εκτέλεσε}}
+% \algrenewcommand\algorithmicwhile{\textbf{όσο}}
+% \algrenewcommand\algorithmicif{\textbf{αν}}
+% \algrenewcommand\algorithmicthen{\textbf{τότε}}
+% \algrenewcommand\algorithmicelse{\textbf{αλλιώς}}
+% \algrenewcommand\algorithmicreturn{\textbf{επιστροφή}}
+% \algrenewcommand\algorithmicfunction{\textbf{συνάρτηση}}
+% \algnewcommand\algorithmicendfor{\textbf{τέλος}}
+% \algdef{SE}[FOR]{For}{EndFor}[1]{\algorithmicfor\ #1\ \algorithmicdo}{\algorithmicendfor}
+% \algnewcommand\algorithmicendif{\textbf{τέλος}}
+% \algdef{SE}[IF]{If}{EndIf}[1]{\algorithmicif\ #1\ \algorithmicthen}{\algorithmicendif}
+% \algnewcommand\algorithmicendfunction{\textbf{τέλος}}
+% \algdef{SE}[FUNCTION]{Function}{EndFunction}[1]{\algorithmicfunction\ #1}{\algorithmicendfunction}
+
+% Colors for sections, subsections, and other elements
+\definecolor{headerblue}{RGB}{41, 98, 153}
+\definecolor{ruleorange}{RGB}{200, 110, 60}
+\definecolor{headergray}{RGB}{80, 80, 80}
+\definecolor{secblue}{RGB}{0, 82, 122}
+\definecolor{suborange}{RGB}{205, 102, 35}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linktoc=all,
+	citecolor=secblue,
+	filecolor=secblue,
+	linkcolor=secblue,
+	urlcolor=secblue,
+	linktocpage,
+	pdftitle={\ThesisTitle},
+	pdfauthor={\ThesisAuthorUppercase},
+	pdfsubject={\ThesisSubject},
+	pdfkeywords={\ThesisKeywords},
+	pdfcreator={\ThesisCreator},
+	pdfpagemode=UseOutlines,
+	pdfdisplaydoctitle=true
+}
+\hypersetup{linktocpage}
+
+\def\numberanchor{section}
+\numberwithin{equation}{\numberanchor}
+\numberwithin{figure}{\numberanchor}
+\numberwithin{table}{\numberanchor}
+\counterwithout{equation}{section}
+\counterwithout{figure}{section}
+\counterwithout{table}{section}
+
+\usepackage[a4paper, top=1.2in, bottom=1.2in, left=1.2in, right=1.2in, headheight=14pt]{geometry}
+\usepackage{setspace}
+\singlespacing
+\usepackage[skip=9pt plus 2pt minus 1pt, indent=0pt, parfill]{parskip}
+
+% Set Bibliography style to IEEE and use biber as backend
+\usepackage[
+	backend=biber,
+	language=auto,
+	autolang=other,
+	style=ieee,
+	defernumbers=true,
+	doi=true
+]{biblatex}
+\addbibresource{references.bib}
+% Allow slightly more flexible line breaks in long bibliography entries.
+\appto\bibsetup{\setlength{\emergencystretch}{1em}}
+
+\sisetup{
+	range-phrase = { έως }
+}
+
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Διπλωματική Εργασία - \ThesisAuthor}
+\renewcommand{\footrulewidth}{1pt}
+\setlength{\footskip}{35pt}
+\fancyfoot[R]{%
+	\small\textcolor{headergray}{\today}~~
+	\raisebox{-0.5ex}{%
+		\colorbox{headerblue}{%
+			\makebox[1.8em][c]{\color{white}\bfseries\small\thepage}%
+		}%
+	}%
+}
+
+% Sections and subsections formatting
+% Section: white text with blue background
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{white}}
+{}
+{0pt}
+{%
+	\leavevmode
+	\rlap{%
+		\color{secblue}%
+		\rule[-\dimexpr0.35em+3pt\relax]{\linewidth}{\dimexpr\baselineskip+8pt\relax}%
+	}%
+	\hspace{6pt}\thesection\quad
+}
+\titlespacing*{\section}
+{0pt}{3.5ex plus 1ex minus .2ex}{2ex}
+
+% Subsection: blue text with orange rule below
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{secblue}}
+{\thesubsection}
+{0.8em}
+{}
+[{\color{suborange}\titlerule[1.5pt]}]
+\titlespacing*{\subsection}
+{0pt}{2.5ex plus 1ex minus .2ex}{1.2ex}
+
+% Numberless section: white text with blue background
+\titleformat{name=\section,numberless}
+{\normalfont\Large\bfseries\color{white}}
+{}
+{0pt}
+{%
+	\leavevmode
+	\rlap{%
+		\color{secblue}%
+		\rule[-\dimexpr0.35em+3pt\relax]{\linewidth}{\dimexpr\baselineskip+8pt\relax}%
+	}%
+	\hspace{6pt}%
+}
+\titlespacing*{\section}
+{0pt}{3.5ex plus 1ex minus .2ex}{2ex}
+
+% Subsubsection: orange text
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries\color{suborange}}
+{\thesubsubsection}
+{0.8em}
+{}
+\titlespacing*{\subsubsection}
+{0pt}{2ex plus 0.8ex minus .2ex}{0.8ex}
+
+% Paragraph: blue text
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries\color{secblue}}
+{\theparagraph}
+{0.8em}
+{}
+\titlespacing*{\paragraph}
+{0pt}
+{1.5ex plus 0.5ex minus .2ex}
+{0.5ex}
